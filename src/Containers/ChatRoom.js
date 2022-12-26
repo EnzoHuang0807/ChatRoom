@@ -152,11 +152,6 @@ const ChatRoom = () => {
               to: activeKey,
               body: msg
             } })
-            displayStatus({
-              type: 'success',
-              msg: 'Message sent.'
-            })
-
             setMsgSent(true);
             setBody('')
         }}

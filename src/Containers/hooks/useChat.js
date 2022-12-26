@@ -81,7 +81,19 @@ const ChatProvider = (props) => {
         variables: { from: me, to: activeKey },
         updateQuery: (prev, { subscriptionData }) => {
           if (!subscriptionData.data) return prev;
+
           const newMessage = subscriptionData.data.message;
+          if (newMessage.sender === me)
+            displayStatus({
+              type: 'success',
+              msg: 'Message sent.'
+            })
+          else
+            displayStatus({
+              type: 'info',
+              msg: 'You have a new message.'
+            })
+          
           return {
             chatBox: {
               __typename: prev.chatBox.__typename, 

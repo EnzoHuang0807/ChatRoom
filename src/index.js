@@ -10,10 +10,10 @@ import reportWebVitals from "./reportWebVitals";
 import "antd/dist/reset.css";
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:4000'
+  uri: 'https://chatroom-backend.onrender.com'
 });
 const wsLink = new GraphQLWsLink(createClient({
-  url: 'ws://localhost:4000',
+  url: 'wss://chatroom-backend.onrender.com',
   options: {
   lazy: true,
   },
